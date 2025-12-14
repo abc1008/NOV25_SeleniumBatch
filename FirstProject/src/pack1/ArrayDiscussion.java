@@ -8,6 +8,8 @@ public class ArrayDiscussion {
 		
 		
 //		SYNTAX 1: 
+		
+		System.out.println("New Line");
 			
 //		dataType [] arrayName = { value1, value2, value3, ... , valueN };
 		
