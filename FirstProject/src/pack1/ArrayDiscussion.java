@@ -13,8 +13,8 @@ public class ArrayDiscussion {
 			
 //		dataType [] arrayName = { value1, value2, value3, ... , valueN };
 		
-//      int a = 10;
-		int [] intArray = { 10,20,30,40,50,60 };
+
+		int [] intArray = { 10,20,30,40,50,60, 70, 80 };
 		
 		
 //		SYNTAX 2 : 
