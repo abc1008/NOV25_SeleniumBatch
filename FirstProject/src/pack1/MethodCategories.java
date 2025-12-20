@@ -2,6 +2,13 @@ package pack1;
 
 public class MethodCategories
 {
+	MethodCategories()
+	{
+		System.out.println("Constructor is running");
+		addition(2,3,"abc");
+		m1();
+	}
+	
 	public static void addition(int num1, int num2, String str)
 	{
 //		int a = 10;
@@ -14,12 +21,17 @@ public class MethodCategories
 	}
 	
 	
-	public static void m2(String str, int num)
+	public static void m2(String str)
 	{
 
 		String s1 = "ABC";
 		
 		System.out.println(s1 + str);
+	}
+	
+	public void m1()
+	{
+		
 	}
 	
 	
@@ -58,10 +70,12 @@ public class MethodCategories
 	
 	public static void main(String[] args)
 	{
+		MethodCategories c1 = new MethodCategories();
+		
 		addition(5, 6, "yt");
 		addition(1,26,"uu");
 		addition(15,16, "eee");
-		m2(" PQR", 5);
+		m2(" PQR");
 		
 		
 		int multiplicationAns = multiplication();
