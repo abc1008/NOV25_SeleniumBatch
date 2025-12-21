@@ -3,10 +3,10 @@ package inheritance;
 public class Class_A
 {
 	
-	
-	
 	int num = 10;
 	static int num2 = 10;
+	
+	int num5 = 80;
 
 	public void m1()
 	{

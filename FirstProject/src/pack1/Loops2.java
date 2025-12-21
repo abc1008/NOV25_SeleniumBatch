@@ -1,5 +1,7 @@
 package pack1;
 
+import accessModifiers.TestClass1;
+
 public class Loops2
 {
 	
@@ -34,6 +36,14 @@ public class Loops2
 				System.out.println(i);
 			}
 		}
+		
+		
+//		TestClass1 ts = new TestClass1();
+		
+		
+//		System.out.println(TestClass1.num);
+		
+//		ts.m1();
 		
 		
 	}

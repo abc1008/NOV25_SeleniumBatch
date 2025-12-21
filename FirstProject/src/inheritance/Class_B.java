@@ -3,7 +3,26 @@ package inheritance;
 //			 Child/SubClass 	 Parent/SuperClass	
 public class Class_B extends Class_A
 {
+	
+	int num = 90;
 
+	
+	
+	public void m1()
+	{
+		System.out.println("m1 method call : ");
+		System.out.println(this.num);
+		
+		System.out.println(super.num5);
+		
+		System.out.println(super.num);  // refer to non-static variable of parent class
+	}
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args)
 	{
 		Class_A a1 = new Class_A();
@@ -27,8 +46,8 @@ public class Class_B extends Class_A
 		System.out.println(num2); // static variable of parent
 		
 		
-		
-		
+
+		b1.m1();
 		
 	}
 	
