@@ -4,9 +4,11 @@ public class Parent2
 {
 	int num = 11;
 	
-	public void car()
+	public int car()
 	{
 		System.out.println("car - Parent2");
+		
+		return 1;
 	}
 	
 	

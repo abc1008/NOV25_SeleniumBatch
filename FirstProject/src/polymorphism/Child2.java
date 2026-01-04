@@ -20,31 +20,13 @@ public class Child2 extends Parent2
 	
 	
 	
-	public void car()  // overridden method
+	public int car()  // overridden method
 	{
+		
 		System.out.println("car - Child2");
+		
+		return 1;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	public static void main(String[] args)

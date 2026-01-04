@@ -9,7 +9,7 @@ public class TestClass1
 		System.out.println("m1");
 	}
 	
-	private int m1(int a)
+	private static int m1(int a)
 	{
 		System.out.println(" int m1");
 		
