@@ -22,5 +22,10 @@ public class Class_B extends Class_A
 	}
 	
 //	few concrete methods and 1 abstract method
+	
+	public static void main(String[] args)
+	{
+		Class_B b = new Class_B();   // call Class_B constructor
+	}
 
 }

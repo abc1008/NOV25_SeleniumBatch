@@ -1,5 +1,6 @@
 package accessModifiers;
 
+import abstract_demo.Class_A;
 
 public class TestClass2
 {
@@ -11,6 +12,9 @@ public class TestClass2
 		System.out.println(TestClass1.num);
 		
 //		TestClass1.m1();
+		
+		
+//		System.out.println(Class_A.b);
 	}
 
 }

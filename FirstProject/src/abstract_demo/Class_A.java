@@ -25,6 +25,17 @@ public abstract class Class_A
 	public abstract void m4(); 
 	
 	
+	public static void m8()
+	{
+		System.out.println("abstract class Class_A - m8 Static method");
+	}
+	
+	public static void main(String[] args)
+	{
+		m8();
+		
+		b = 400;
+	}
 	
 //	users 
 //	entities

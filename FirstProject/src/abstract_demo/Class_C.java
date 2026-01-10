@@ -1,5 +1,7 @@
 package abstract_demo;
 
+import interface_demo.Interface1;
+
 public class Class_C extends Class_B
 {
 
@@ -30,6 +32,8 @@ public class Class_C extends Class_B
 		c2.m3();
 		c2.m4();
 		
+		
+		System.out.println(Interface1.num);
 		
 	}
 }
