@@ -25,7 +25,7 @@ public class Class_1
 //			2. qeries on db    // exception
 			
 		}
-		catch (Exception ex)
+		catch (Throwable ex)
 		{
 			
 //			ArithmeticException

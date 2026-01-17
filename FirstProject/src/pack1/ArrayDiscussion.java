@@ -30,7 +30,7 @@ public class ArrayDiscussion {
 		intArray2[5] = 9900;
 		
 		
-		int num = intArray[4];
+		int num = intArray[9];
 		System.out.println(num);
 		
 		
