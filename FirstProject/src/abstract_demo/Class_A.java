@@ -1,5 +1,6 @@
 package abstract_demo;
 
+
 public abstract class Class_A
 {
 	int a;
@@ -35,6 +36,8 @@ public abstract class Class_A
 		m8();
 		
 		b = 400;
+		
+		
 	}
 	
 //	users 
