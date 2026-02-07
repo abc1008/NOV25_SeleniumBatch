@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LoginOrangeHrm
+public class LoginOrangeHrm3
 {
 	
 	public static void main(String[] args) throws InterruptedException
@@ -17,7 +17,7 @@ public class LoginOrangeHrm
 		
 		
 //		locate webelement on UI using provided id 
-		WebElement textBoxEmail = driver.findElement(By.name("username"));
+		WebElement textBoxEmail = driver.findElement(By.xpath("//input[@name='username' or @placeholder='username']"));
 		textBoxEmail.sendKeys("Admin");  // sending text on WebElement
 		
 		Thread.sleep(3000);
