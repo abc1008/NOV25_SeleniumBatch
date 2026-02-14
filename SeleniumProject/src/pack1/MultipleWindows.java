@@ -1,5 +1,7 @@
 package pack1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -24,6 +26,8 @@ public class MultipleWindows
 		
 		Thread.sleep(3000);
 		
+		System.out.println();
+		
 		Set<String> allWins = driver.getWindowHandles();  // return window Handles/ids of all windows open
 		
 		for(String windowId : allWins)
@@ -32,7 +36,18 @@ public class MultipleWindows
 		}
 		
 		
-//		driver.switchTo().window(null); // switch focus of selenium from main window to another window
+//		driver.switchTo().window(windowHandleToSwitch);  	// switch focus of selenium from main window to another window
+		
+		List<String> list = new ArrayList<String>(allWins);  // conversion of Set into List
+		String nextWinId = list.get(1);
+		
+		driver.switchTo().window(nextWinId);
+		
+		System.out.println("Switched to window : "+nextWinId);
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//input[@name='EmailHomePage']")).sendKeys("abc@gmail.com");
+		
 
 	}
 
