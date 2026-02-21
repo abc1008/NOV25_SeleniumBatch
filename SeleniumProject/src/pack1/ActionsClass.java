@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import utility.JavascriptMethods;
+
 public class ActionsClass
 {
 
@@ -25,8 +27,11 @@ public class ActionsClass
 
 //		Scroll
 //		JavascriptExecutor   --> Interface
-		JavascriptExecutor js = (JavascriptExecutor) driver; // type-casting
-		js.executeScript("arguments[0].scrollIntoView();", doubleClickEle);
+		
+//		JavascriptExecutor js = (JavascriptExecutor) driver; // type-casting
+//		js.executeScript("arguments[0].scrollIntoView();", doubleClickEle);
+		
+		JavascriptMethods.scrollTo(driver, doubleClickEle);
 
 		Thread.sleep(3000);
 		Actions act = new Actions(driver);
