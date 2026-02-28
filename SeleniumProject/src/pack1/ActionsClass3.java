@@ -1,5 +1,6 @@
 package pack1;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -13,6 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import utility.JavascriptMethods;
+import utility.PropertyReader;
 
 public class ActionsClass3
 {
@@ -46,7 +48,7 @@ public class ActionsClass3
 		return ans;
 	}
 
-	public static void main(String[] args) throws InterruptedException
+	public static void main(String[] args) throws InterruptedException, IOException
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -57,11 +59,7 @@ public class ActionsClass3
 		 List<WebElement> list = driver.findElements(By.xpath("//select//option"));
 
 		 list.size();
-		 
-
-		 
-		 
-		 
+		
 		 
 
 	}
