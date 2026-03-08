@@ -1,15 +1,18 @@
 package testSciptClasses;
 
+import java.io.IOException;
+
+import basePack.BaseClass;
 import pageClasses.LoginPage;
 
-public class LoginTestScriptClass
+public class LoginTestScriptClass extends BaseClass
 {
 	
-	public void performLogin()
+	public void performLogin() throws InterruptedException, IOException
 	{
 //		to call method from page class
 		
-		LoginPage loginPage = new LoginPage();
+		LoginPage loginPage = new LoginPage(driver);  // calling constructor
 		loginPage.login();
 	}
 
