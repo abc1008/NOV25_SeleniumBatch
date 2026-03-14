@@ -12,7 +12,7 @@ public class LoginTestScriptClass extends BaseClass
 	{
 //		to call method from page class
 		
-		LoginPage loginPage = new LoginPage(driver);  // calling constructor
+		LoginPage loginPage = new LoginPage(driver.get());  // calling constructor
 		loginPage.login();
 	}
 

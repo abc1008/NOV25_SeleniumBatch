@@ -2,24 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-08T11:46:15 IST" name="Default suite" finished-at="2026-03-08T11:46:45 IST" duration-ms="29394">
+  <suite started-at="2026-03-14T11:35:25 IST" name="Suite" finished-at="2026-03-14T11:35:57 IST" duration-ms="32114">
     <groups>
     </groups>
-    <test started-at="2026-03-08T11:46:15 IST" name="Default test" finished-at="2026-03-08T11:46:45 IST" duration-ms="29394">
+    <test started-at="2026-03-14T11:35:25 IST" name="Test" finished-at="2026-03-14T11:35:57 IST" duration-ms="32114">
       <class name="testSuites.HeaderSuite">
-        <test-method is-config="true" signature="initBrowser()[pri:0, instance:testSuites.HeaderSuite@3c46e67a]" started-at="2026-03-08T11:46:15 IST" name="initBrowser" finished-at="2026-03-08T11:46:27 IST" duration-ms="11864" status="PASS">
+        <test-method is-config="true" signature="initBrowser(java.lang.String)[pri:0, instance:testSuites.HeaderSuite@6a6cb05c]" started-at="2026-03-14T11:35:25 IST" name="initBrowser" finished-at="2026-03-14T11:35:38 IST" duration-ms="13522" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowser -->
-        <test-method signature="tc_123_ChangePasswordTest()[pri:0, instance:testSuites.HeaderSuite@3c46e67a]" started-at="2026-03-08T11:46:27 IST" name="tc_123_ChangePasswordTest" finished-at="2026-03-08T11:46:43 IST" duration-ms="16450" status="PASS">
+        <test-method signature="tc_123_ChangePasswordTest()[pri:0, instance:testSuites.HeaderSuite@6a6cb05c]" started-at="2026-03-14T11:35:38 IST" name="tc_123_ChangePasswordTest" finished-at="2026-03-14T11:35:54 IST" duration-ms="16063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_123_ChangePasswordTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testSuites.HeaderSuite@3c46e67a]" started-at="2026-03-08T11:46:44 IST" name="closeBrowser" finished-at="2026-03-08T11:46:45 IST" duration-ms="999" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:testSuites.HeaderSuite@6a6cb05c]" started-at="2026-03-14T11:35:54 IST" name="logout" finished-at="2026-03-14T11:35:57 IST" duration-ms="2405" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
+        </test-method> <!-- logout -->
       </class> <!-- testSuites.HeaderSuite -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

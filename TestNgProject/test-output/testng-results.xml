@@ -1,33 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-07T11:31:37 IST" name="Default suite" finished-at="2026-03-07T11:31:42 IST" duration-ms="5155">
+  <suite started-at="2026-03-14T09:48:26 IST" name="Default suite" finished-at="2026-03-14T09:48:26 IST" duration-ms="178">
     <groups>
     </groups>
-    <test started-at="2026-03-07T11:31:37 IST" name="Default test" finished-at="2026-03-07T11:31:42 IST" duration-ms="5155">
-      <class name="seleniumCode.ChangePasswordTest">
-        <test-method is-config="true" signature="initBrowser()[pri:0, instance:seleniumCode.ChangePasswordTest@4d1c00d0]" started-at="2026-03-07T11:31:17 IST" name="initBrowser" finished-at="2026-03-07T11:31:37 IST" duration-ms="20155" status="PASS">
+    <test started-at="2026-03-14T09:48:26 IST" name="Default test" finished-at="2026-03-14T09:48:26 IST" duration-ms="178">
+      <class name="pack1.DataTest">
+        <test-method signature="testCase1(java.lang.String)[pri:0, instance:pack1.DataTest@74235045]" started-at="2026-03-14T09:48:26 IST" name="testCase1" data-provider="TestData" finished-at="2026-03-14T09:48:26 IST" duration-ms="25" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ABC]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:seleniumCode.ChangePasswordTest@4d1c00d0]" started-at="2026-03-07T11:31:37 IST" name="login" finished-at="2026-03-07T11:31:37 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- testCase1 -->
+        <test-method signature="testCase1(java.lang.String)[pri:0, instance:pack1.DataTest@74235045]" started-at="2026-03-14T09:48:26 IST" name="testCase1" data-provider="TestData" finished-at="2026-03-14T09:48:26 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PQR]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="changePasswordTest()[pri:0, instance:seleniumCode.ChangePasswordTest@4d1c00d0]" started-at="2026-03-07T11:31:37 IST" name="changePasswordTest" finished-at="2026-03-07T11:31:42 IST" duration-ms="5038" status="PASS">
+        </test-method> <!-- testCase1 -->
+        <test-method signature="testCase1(java.lang.String)[pri:0, instance:pack1.DataTest@74235045]" started-at="2026-03-14T09:48:26 IST" name="testCase1" data-provider="TestData" finished-at="2026-03-14T09:48:26 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[XYZ]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- changePasswordTest -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:seleniumCode.ChangePasswordTest@4d1c00d0]" started-at="2026-03-07T11:31:42 IST" name="logout" finished-at="2026-03-07T11:31:42 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumCode.ChangePasswordTest@4d1c00d0]" started-at="2026-03-07T11:31:42 IST" name="closeBrowser" finished-at="2026-03-07T11:31:43 IST" duration-ms="359" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- seleniumCode.ChangePasswordTest -->
+        </test-method> <!-- testCase1 -->
+      </class> <!-- pack1.DataTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

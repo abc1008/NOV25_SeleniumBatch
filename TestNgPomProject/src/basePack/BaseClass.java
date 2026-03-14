@@ -2,62 +2,84 @@ package basePack;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import pageClasses.HeaderPage;
 import testSciptClasses.LoginTestScriptClass;
+import utility.ExtentReportHelper;
 import utility.PropertyReader;
 
 public class BaseClass
 {
-	public static WebDriver driver;
+//	public static WebDriver driver;
 	
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	
+//	@BeforeMethod
+//	public void login() throws InterruptedException, IOException 
+//	{
+//		ExtentReportHelper.startTest("Test Case 1");
+//		LoginTestScriptClass loginTestScriptClass = new LoginTestScriptClass();
+//		loginTestScriptClass.performLogin();
+//		
+//	}
+	
+	
+	@Parameters("browser")
 	@BeforeMethod
-	public void initBrowser() throws IOException, InterruptedException
+	public void initBrowser(String browser) throws IOException, InterruptedException
 	{
-		 String browserName = PropertyReader.getProperty("Browser");
-		 if(browserName.equalsIgnoreCase("CHROME"))
+//		 String browserName = PropertyReader.getProperty("Browser");
+		
+		
+		 LocalDateTime localDate = LocalDateTime.now();
+		 DateTimeFormatter pattern = DateTimeFormatter.ofPattern("ddMMyyhhmmss");
+		 String formattedDate = "_" + localDate.format(pattern);
+		
+		 if(browser.equalsIgnoreCase("CHROME"))
 		 {
-			 driver  = new ChromeDriver();
+			 driver.set(new  ChromeDriver());
 		 }
-		 else if(browserName.equalsIgnoreCase("EDGE"))
+		 else if(browser.equalsIgnoreCase("EDGE"))
 		 {
-			 driver  = new EdgeDriver();
+			 driver.set(new  EdgeDriver());
 		 }
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize();
-		driver.get(PropertyReader.getProperty("TestSiteUrl"));
+		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get().manage().window().maximize();
+		driver.get().get(PropertyReader.getProperty("TestSiteUrl"));
+		ExtentReportHelper extentReportHelper = new ExtentReportHelper(formattedDate);
 		
-		
+		ExtentReportHelper.startTest("Test Case 1");
 		LoginTestScriptClass loginTestScriptClass = new LoginTestScriptClass();
 		loginTestScriptClass.performLogin();
 	}
 	
 	@AfterMethod
-	public void closeBrowser()
+	public void logout()
 	{
-		HeaderPage headerPage = new HeaderPage(driver);
+		HeaderPage headerPage = new HeaderPage(driver.get());
 		headerPage.logout();
-		driver.quit();
+		ExtentReportHelper.endTest();
+		driver.get().quit();
+		
 	}
 	
-	
-//	@BeforeMethod
-//	public void login()
+//	@AfterSuite
+//	public void closeBrowser()
 //	{
-//		System.out.println("Login Successful");
+//
 //	}
-//	
 	
-//	@AfterMethod
-//	public void logout()
-//	{
-//		System.out.println("Logout Successful");
-//	}
+
 }

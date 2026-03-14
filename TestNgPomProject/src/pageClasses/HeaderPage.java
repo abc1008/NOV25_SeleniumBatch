@@ -1,18 +1,15 @@
 package pageClasses;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.util.PropertyResourceBundle;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utility.ExplicitWait;
+import utility.ExtentReportHelper;
 import utility.PropertyReader;
 
 public class HeaderPage
@@ -70,44 +67,71 @@ public class HeaderPage
 	
 	public void logout()
 	{
-		dropdownProfile.click();
-		optionLogout.click();
-		
+		try
+		{
+			dropdownProfile.click();
+			optionLogout.click();
+			
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(textBoxEmailXpath)));
-		
-		ExplicitWait.waitUntilElementVisibleByLoactor(driver, By.xpath(textBoxEmailXpath));
+			
+			ExplicitWait.waitUntilElementVisibleByLoactor(driver, By.xpath(textBoxEmailXpath));
 
-		
-		if(textBoxEmail.isDisplayed())
-		{
-			System.out.println("Logout Successful");
+			
+			if(textBoxEmail.isDisplayed())
+			{
+				System.out.println("Logout Successful");
+				ExtentReportHelper.logPass("Logout Successful");
+			}
+			else
+			{
+				System.out.println("Logout Failed");
+				ExtentReportHelper.logFail("Logout Failed");
+			}
 		}
-		else
+		catch (Exception e)
 		{
-			System.out.println("Logout Failed");
+			System.out.println("Exception in method 'logout' : "+e.getMessage());
 		}
 	}
 	
-	public void changePassword() throws IOException
+	public boolean changePassword() throws IOException
 	{
-		dropdownProfile.click();
-		optionChangePassword.click();
-		ExplicitWait.waitUntilElementClickableByLoactor(driver, By.xpath(textBoxEnterPasswordXpath));
-		textBoxEnterPassword.sendKeys(PropertyReader.getProperty("Password"));
-		textBoxConfirmPassword.sendKeys(PropertyReader.getProperty("Password"));
-		buttonUpdate.click();
+		boolean testResult = false;
 		
-		if(msgSuccess.isDisplayed())
+		try
 		{
-			System.out.println("Password Changed");
+			dropdownProfile.click();
+			optionChangePassword.click();
+			ExtentReportHelper.logInfo("Selected change password option");
+			ExplicitWait.waitUntilElementClickableByLoactor(driver, By.xpath(textBoxEnterPasswordXpath));
+			textBoxEnterPassword.sendKeys(PropertyReader.getProperty("Password"));
+			textBoxConfirmPassword.sendKeys(PropertyReader.getProperty("Password"));
+			ExtentReportHelper.logInfo("Entered both passwords");
+			buttonUpdate.click();
+			ExtentReportHelper.logInfo("Clicked update button");
+			
+			if(msgSuccess.isDisplayed())
+			{
+//				System.out.println("Password Changed");
+				ExtentReportHelper.logPass("Password Changed");
+				testResult = true;
+			}
+			else
+			{
+//				System.out.println("Failed to Change Password");
+				ExtentReportHelper.logFail("Failed to Change Password");
+			}
+			
+			ExplicitWait.waitUntilElementInvisibleByLoactor(driver, By.xpath(msgSuccessXpath));
 		}
-		else
+		catch (Exception e)
 		{
-			System.out.println("Failed to Change Password");
+//			System.out.println("Exception in method 'changePassword' : "+e.getMessage());
+			ExtentReportHelper.logFail("Exception in method 'changePassword' : "+e.getMessage());
 		}
 		
-		ExplicitWait.waitUntilElementInvisibleByLoactor(driver, By.xpath(msgSuccessXpath));
+		return testResult;
 			
 	}
 	

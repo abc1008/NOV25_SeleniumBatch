@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utility.ExplicitWait;
+import utility.ExtentReportHelper;
 import utility.PropertyReader;
 
 public class LoginPage
@@ -63,11 +64,13 @@ public class LoginPage
 		
 		if(dropdownProfile.isDisplayed())
 		{
-			System.out.println("Login Successful");
+//			System.out.println("Login Successful");
+			ExtentReportHelper.logPass("Login Successful");
 		}
 		else
 		{
-			System.out.println("Login Failed");
+//			System.out.println("Login Failed");
+			ExtentReportHelper.logPass("Login Failed");
 		}
 	}
 	
