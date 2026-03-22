@@ -1,5 +1,6 @@
 Feature: Change Password Feature
 
+	@Test
   Scenario: Verify Change Password valid credentials
 		Given user selects change password opion from profile icon
 		When user enters valid passwords
